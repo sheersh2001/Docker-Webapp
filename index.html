@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Docker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <script src="backend.js">
+
+  </script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  .form-popup2 {
+      display: none;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    } 
+ 
+  .form-popup3 {
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+
+
+    /* Add styles to the form container */
+    .form-container,
+    .form-container2 {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    .form-container3 {
+      min-width: 350px;
+      max-height: 500px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=text],
+    .form-container2 input[type=text],
+    .form-container3 input[type=text] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=text]:focus,
+    .form-container2 input[type=text]:focus,
+    .form-container3 input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn,
+    .form-container2 .btn2 {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+    .form-container3 .btn3 {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 49%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .cancel,
+    .form-container2 .cancel2,
+    .form-container3 .cancel3 {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .form-container2 .btn2:hover,
+    .form-container3 .btn3:hover {
+      opacity: 1;
+    }
+
+    .button {
+      background-color: white;
+      /* Green */
+      min-width: 200px;
+      border: none;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 35px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .output {
+      position: absolute;
+      top: 49%;
+
+      overflow: scroll;
+      left: 30.5%;
+      right: 30%;
+      width: 36%;
+      scroll-behavior: smooth;
+      height: 250px;
+      background-color: whitesmoke;
+      opacity: 0.8;
+    }
+
+
+
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+    }
+
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+
+    .button3 {
+      background-color: white;
+      color: black;
+      border: 2px solid #f44336;
+    }
+
+    .button3:hover {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .button4 {
+      background-color: rgb(240, 239, 241);
+      color: black;
+      float: left;
+      border: 2px solid #f44336;
+    }
+
+    .button4:hover {
+      background-color: #12adeb;
+      color: white;
+    }
+
+    body {
+      background-image: url('docker.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+
+    }
+  </style>
+
+  <script src="backend.js"></script>
+
+<body>
+
+  <script>
+    function openForm1() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm1() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+    function openForm3() {
+      document.getElementById("myForm2").style.display = "block";
+    }
+
+    function closeForm3() {
+      document.getElementById("myForm2").style.display = "none";
+    }
+
+    function openForm4() {
+      document.getElementById("myForm3").style.display = "block";
+    }
+
+    function closeForm4() {
+      document.getElementById("myForm3").style.display = "none";
+    }
+  </script>
+
+  <button style="position: absolute; left: 10px; top: 10px;" class="button button1"
+    onclick="openForm1()">Launch</button>
+  <div class="form-popup" id="myForm">
+    <div class="form-container">
+
+      <label style="text-align: center;" for="container"><b>Container Name</b></label>
+      <input id="container_name" type="text" placeholder="Enter name" value="" required>
+
+      <label for="image"><b>Image Name</b></label>
+      <input id="image_name" type="text" placeholder="Enter name" value="" required>
+
+      <button type="submit" class="btn" onclick="create();">Launch</button>
+      <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+    </div>
+  </div>
+
+  <button style="position: absolute; left: 10px; top: 100px;" class="button button3"
+    onclick="openForm3()">Delete</button>
+  <div class="form-popup2" id="myForm2">
+    <div class="form-container2">
+
+      <label style="text-align: center;" for="container"><b>Container ID/Name</b></label><br><br>
+      <input id="del_name" type="text" placeholder="Enter name" value="" required> <br><br><br><br><br>
+      <button type="submit" class="btn2" onclick="del();">Delete</button>
+      <button type="button" class="btn2 cancel2" onclick="closeForm3()">Close</button>
+    </div>
+  </div>
+
+  <button style="position: absolute; right: 10px; top: 10px;" class="button button4" onclick="openForm4()">Other
+    command</button>
+  <div class="form-popup3" id="myForm3">
+    <div class="form-container3">
+      <h4>[root@localhost ~]#</h4>
+      <input id="command_name" type="text" placeholder="Enter command" value="" required> <br><br><br>
+      <button type="submit" class="btn3" onclick="other();">Submit</button>
+      <button type="button" class="btn3 cancel3" onclick="closeForm4()">Close</button>
+    </div>
+  </div>
+
+  <div class="output">
+    <center>
+      <br>
+      <b>Output will be displayed here:<b><br>
+      <pre><p id="output_id"> </p></pre>
+    </center>
+  </div>
+
+  <center>
+    <h1 style="width:50%; text-align: center; font-size: 45px;font-family: 'Courier New', Courier, monospace;"><span
+        style="color: whitesmoke;">Docker using GUI</span></h1>
+  </center>
+
+</body>
+
+</head>
+
+</html>
