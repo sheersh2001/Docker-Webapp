@@ -5,7 +5,7 @@ function create(){
          cname = document.getElementById("container_name").value
          img = document.getElementById("image_name").value
          xhr = new XMLHttpRequest();
-         xhr.open('GET','http://192.168.29.242/cgi-bin/create.py?i=' +img+ '&n=' +cname,true);
+         xhr.open('GET','http://13.232.113.175/cgi-bin/create.py?i=' +img+ '&n=' +cname,true);
          xhr.send();
          xhr.onload=function (){
              output = xhr.responseText;
@@ -19,7 +19,7 @@ function create(){
     if(decision == true){
             cname = document.getElementById("del_name").value
             xhr = new XMLHttpRequest();
-            xhr.open('GET','http://192.168.29.242/cgi-bin/del.py?n= '+cname,true);
+            xhr.open('GET','http://13.232.113.175/cgi-bin/del.py?n= '+cname,true);
             xhr.send();
             xhr.onload=function (){
                 output = xhr.responseText;
@@ -33,7 +33,7 @@ function other(){
 i=document.getElementById("command_name").value
 
 var xhr=new XMLHttpRequest();
-xhr.open("GET", "http://192.168.29.242/cgi-bin/other.py?x="+i,true);
+xhr.open("GET", "http://13.232.113.175/cgi-bin/other.py?x="+i,true);
 xhr.send();
 xhr.onload=function(){
         var output=xhr.responseText;
